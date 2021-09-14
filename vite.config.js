@@ -1,46 +1,43 @@
-import { defineConfig } from 'vite';
-import path from 'path';
-import vue from '@vitejs/plugin-vue';
+import vue from '@vitejs/plugin-vue'
+import path from 'path'
+import { defineConfig } from 'vite'
+import config from './package.json'
 
 // https://vitejs.dev/config/
-export default defineConfig(
-  {
-    resolve: {
-      alias: [
-        {
-          find: '@',
-          replacement: path.resolve(__dirname,'src')
-        }
-      ],
-      extensions: [
-        '.mjs',
-        '.js',
-        '.ts',
-        '.jsx',
-        '.tsx',
-        '.json',
-        '.vue'
-      ]
-    },
-    plugins: [
-      vue(),
+export default defineConfig({
+  resolve: {
+    alias: [
+      {
+        find: '@',
+        replacement: path.resolve(__dirname, 'src')
+      }
     ],
-    build: {
-      outDir: path.resolve(__dirname, 'dist'),
-      lib: {
-        entry: './src/index.js',
-        name: 'vue-uploader.js'
-      },
-      cssCodeSplit: false
-    },
-    define: {
-      __VERSION__: '"0.7.6"',
-      'process.env': {
-        NODE_ENV: '"development"'
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
+  },
+  plugins: [vue()],
+  build: {
+    rollupOptions: {
+      external: ['vue'],
+      output: {
+        dir: 'dist',
+        globals: {
+          vue: 'Vue'
+        }
       }
     },
-    server: {
-      port: 3001
+    lib: {
+      entry: 'src/index',
+      name: config.name,
+      fileName: config.name
     }
+  },
+  define: {
+    __VERSION__: `"${config.version}"`,
+    'process.env': {
+      NODE_ENV: '"development"'
+    }
+  },
+  server: {
+    port: 3001
   }
-)
+})

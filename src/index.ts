@@ -1,10 +1,11 @@
-import Uploader from './components/uploader.vue'
+import { App } from 'vue'
 import UploaderBtn from './components/btn.vue'
 import UploaderDrop from './components/drop.vue'
-import UploaderUnsupport from './components/unsupport.vue'
-import UploaderList from './components/list.vue'
-import UploaderFiles from './components/files.vue'
 import UploaderFile from './components/file.vue'
+import UploaderFiles from './components/files.vue'
+import UploaderList from './components/list.vue'
+import UploaderUnsupport from './components/unsupport.vue'
+import Uploader from './components/uploader.vue'
 
 const uploader = {
   version: /* eslint-disable no-undef */ __VERSION__,
@@ -20,7 +21,7 @@ const uploader = {
 
 export default uploader
 
-function install (app, options) {
+function install(app: App, _opts = {}) {
   app.component(Uploader.name, Uploader)
   app.component(UploaderBtn.name, UploaderBtn)
   app.component(UploaderDrop.name, UploaderDrop)

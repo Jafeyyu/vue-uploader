@@ -48,7 +48,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { computed, ref, watch, onMounted, onUnmounted, getCurrentInstance } from 'vue'
 import Uploader from 'simple-uploader.js'
 import { secondsToStr } from '../common/utils'

@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
   import { inject } from 'vue'
   const COMPONENT_NAME = 'uploader-unsupport'
 

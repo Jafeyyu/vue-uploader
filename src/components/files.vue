@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
   import { inject, ref, watch } from 'vue'
   import UploaderFile from './file.vue'
 

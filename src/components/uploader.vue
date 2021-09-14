@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
   import { provide, ref, reactive, onUnmounted, getCurrentInstance } from 'vue'
   import Uploader from 'simple-uploader.js'
   import { kebabCase } from '../common/utils'

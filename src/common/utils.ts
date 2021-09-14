@@ -1,4 +1,4 @@
-export function secondsToStr (temp) {
+export function secondsToStr(temp: number) {
   const years = Math.floor(temp / 31536000)
   if (years) {
     return years + ' year' + numberEnding(years)
@@ -17,11 +17,11 @@ export function secondsToStr (temp) {
   }
   const seconds = temp % 60
   return seconds + ' second' + numberEnding(seconds)
-  function numberEnding (number) {
-    return (number > 1) ? 's' : ''
+  function numberEnding(number: number) {
+    return number > 1 ? 's' : ''
   }
 }
 
-export function kebabCase (s) {
-  return s.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`)
+export function kebabCase(s: string) {
+  return s.replace(/[A-Z]/g, (m: string) => `-${m.toLowerCase()}`)
 }

@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
   import { inject, nextTick, ref, onBeforeUnmount } from 'vue'
 
   const COMPONENT_NAME = 'uploader-drop'

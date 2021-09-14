@@ -4,7 +4,7 @@
   </label>
 </template>
 
-<script>
+<script lang="ts">
   import { inject, nextTick, ref, onMounted } from 'vue'
 
   const COMPONENT_NAME = 'uploader-btn'

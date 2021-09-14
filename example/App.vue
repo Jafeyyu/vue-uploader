@@ -2,7 +2,7 @@
   <uploader :options="options" :file-status-text="statusText" class="uploader-example" ref="uploader" @file-complete="fileComplete" @complete="complete"></uploader>
 </template>
 
-<script>
+<script lang="ts">
   import { nextTick, ref, onMounted } from 'vue'
   export default {
     setup () {
